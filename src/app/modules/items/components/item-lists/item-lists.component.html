@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3><strong>{{listName}}</strong></h3>
+    <div *ngFor="let item of items" (click)="selectItem(item)" role="button">
+      <item-stats [item]="item"></item-stats>
+    </div>
+  </div>
+</div>

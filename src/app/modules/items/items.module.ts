@@ -6,11 +6,14 @@ import {NgModule} from "@angular/core";
 import {ItemStatsComponent} from "./components/item-stats/item-stats.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {Pipes} from "../pipes/pipes.module";
-import {ItemImageComponent} from "./components/item-image/item-image.component";
+import {ItemListsComponent} from "./components/item-lists/item-lists.component";
 
 @NgModule({
-  declarations: [ItemStatsComponent, ItemImageComponent],
+  declarations: [ItemStatsComponent, ItemListsComponent],
   imports:[Pipes, BrowserModule],
-  exports:[ItemStatsComponent, ItemImageComponent]
+  exports:[ItemStatsComponent, ItemListsComponent]
 })
-export class ItemsModule{}
+
+export class ItemsModule{
+
+}

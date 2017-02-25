@@ -15,6 +15,8 @@ import {Item} from "../types/item/item";
 export class ItemsSectionComponent implements OnInit{
   items: ItemGroup;
   selectedItem: Item;
+  itemsInto = 'Build Into';
+  itemsFrom = 'Built From';
 
   constructor(private itemService: ItemService){}
 

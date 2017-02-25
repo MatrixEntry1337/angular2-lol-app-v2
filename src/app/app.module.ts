@@ -10,6 +10,7 @@ import { Jumbotron } from './modules/jumbotrons/jumbotrons.module';
 import {ChampionServiceModule} from "./modules/champion-services/champion-services.module";
 import {ItemServiceModule} from "./modules/item-services/item-services.module";
 import {Champions} from "./modules/champions/champions.module";
+import {ItemsModule} from "./modules/items/items.module";
 import {Pipes} from './modules/pipes/pipes.module'
 
 // providers
@@ -21,7 +22,6 @@ import { AppComponent } from './app.component';
 import {ChampionsSectionComponent} from "./champions-section/champions-section.component";
 import {HomeSectionComponent} from "./home-section/home-section.component";
 import {ItemsSectionComponent} from "./items-section/items-section.component";
-import {ItemsModule} from "./modules/items/items.module";
 
 @NgModule({
   declarations: [

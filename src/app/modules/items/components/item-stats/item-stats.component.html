@@ -1,10 +1,31 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <h4><strong>Stats</strong></h4>
-    <ul class="list-group">
+    <h3><strong>{{item.name}}</strong></h3>
+    <img class="img-responsive" src="{{getFullImage()}}">
+    <ul class="list-group margin-top-5">
+      <li class="list-group-item">
+        {{item.plaintext}}
+      </li>
+      <li class="list-group-item">
+        {{item.sanitizedDescription}}
+      </li>
       <li class="list-group-item" *ngFor="let key of keys">
         {{key}}
         <span class="badge">{{stats[key]}}</span>
+      </li>
+    </ul>
+    <ul class="list-group margin-top-5">
+      <li class="list-group-item">
+        Base
+        <span class="badge">{{item.gold.base}}</span>
+      </li>
+      <li class="list-group-item">
+        Total Gold
+        <span class="badge">{{item.gold.total}}</span>
+      </li>
+      <li class="list-group-item">
+        Sell
+        <span class="badge">{{item.gold.sell}}</span>
       </li>
     </ul>
   </div>

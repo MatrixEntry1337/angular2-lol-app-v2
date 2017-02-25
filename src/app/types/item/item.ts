@@ -5,7 +5,7 @@ import {Image} from "./image";
 export class Item{
   id: number;
   name: string;
-  description: string;
+  sanitizedDescription: string;
   plaintext: string;
   tags: string[];
   depth: number;
