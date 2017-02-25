@@ -22,10 +22,13 @@
 <div class="margin-top-10" *ngIf="selectedItem">
   <div class="row">
     <div class="col-md-4">
-      <item-stats [stats]="selectedItem.stats"></item-stats>
+      <item-stats [item]="selectedItem"></item-stats>
     </div>
     <div class="col-md-4">
-      <item-image [image]="selectedItem.image"></item-image>
+      <item-lists [itemList]="selectedItem.into" [listName]="itemsInto" (notify)="selectItem($event)"></item-lists>
+    </div>
+    <div class="col-md-4">
+      <item-lists [itemList]="selectedItem.from" [listName]="itemsFrom" (notify)="selectItem($event)"></item-lists>
     </div>
   </div>
 </div>

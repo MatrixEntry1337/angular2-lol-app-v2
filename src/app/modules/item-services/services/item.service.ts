@@ -39,6 +39,16 @@ export class ItemService{
       })
   }
 
+  getItemById(item: number): Promise<Item> {
+    return this.http.get(this.itemsUrl + "/" + item + "?itemData=all&api_key=" + this.properties.getAPIKey())
+      .toPromise()
+      .then(response => {
+        console.log("Retrieved All Item Data: ");
+        console.log(response);
+        return response.json();
+      })
+  }
+
   // error handler
   handleError(error: any): Promise<any> {
     console.log('An error occurred');
