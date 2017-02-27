@@ -9,11 +9,27 @@ import {ChampionSpellsComponent} from './components/champion-spells/champion-spe
 import {ChampionSkinsComponent} from "./components/champion-skins/champion-skins.component";
 import {ChampionLoreComponent} from "./components/champion-lore/champion-lore.component";
 import {ChampionStatsComponent} from "./components/champion-stats/champion-stats.component";
+import {ChampionListComponent} from "./components/champion-list/champion-list.component";
 
 @NgModule({
-  declarations: [ChampionSpellsComponent, ChampionSkinsComponent, ChampionLoreComponent, ChampionStatsComponent],
-  imports:[Pipes, BrowserModule],
-  exports: [ChampionSpellsComponent, ChampionSkinsComponent, ChampionLoreComponent, ChampionStatsComponent]
+  declarations: [
+    ChampionSpellsComponent,
+    ChampionSkinsComponent,
+    ChampionLoreComponent,
+    ChampionStatsComponent,
+    ChampionListComponent
+  ],
+  imports:[
+    Pipes,
+    BrowserModule
+  ],
+  exports: [
+    ChampionSpellsComponent,
+    ChampionSkinsComponent,
+    ChampionLoreComponent,
+    ChampionStatsComponent,
+    ChampionListComponent
+  ]
 })
 
 export class Champions{}

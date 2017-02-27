@@ -21,27 +21,37 @@ export class ChampionService{
   constructor(private http: Http, private properties: Properties){}
 
   getAllChampions(): Promise<ChampionGroup>{
-  return this.http.get(this.championsUrl + "?champData=tags&api_key=" + this.properties.getAPIKey())
-    .toPromise().then(response => {
-      console.log("Getting All Champions:")
-      console.log(response.json().data);
-      return response.json().data as ChampionGroup;
-    })
-    .catch(this.handleError);
+    return this.http.get(this.championsUrl + "?champData=tags&api_key=" + this.properties.getAPIKey())
+      .toPromise().then(response => {
+        console.log("Getting All Champions:");
+        console.log(response.json().data);
+        return response.json().data as ChampionGroup;
+      })
+      .catch(ChampionService.handleError);
 }
 
   getChampion(champion: Champion): Promise<Champion> {
-  return this.http.get(this.championsUrl + "/" + champion.id + "?champData=all&api_key=" + this.properties.getAPIKey())
-    .toPromise().then(response => {
-      console.log("Retrieved Champion Data: ");
-      console.log(response.json());
-      return response.json() as Champion;
-    })
-    .catch(this.handleError);
-}
+    return this.http.get(this.championsUrl + "/" + champion.id + "?champData=all&api_key=" + this.properties.getAPIKey())
+      .toPromise().then(response => {
+        console.log("Retrieved Champion Data: ");
+        console.log(response.json());
+        return response.json() as Champion;
+      })
+      .catch(ChampionService.handleError);
+  }
+
+  getChampionById(champion: number): Promise<Champion> {
+    return this.http.get(this.championsUrl + "/" + champion + "?champData=all&api_key=" + this.properties.getAPIKey())
+      .toPromise().then(response => {
+        console.log("Retrieved Champion Data: ");
+        console.log(response.json());
+        return response.json() as Champion;
+      })
+      .catch(ChampionService.handleError);
+  }
 
   // error handler
-  handleError(error: any): Promise<any> {
+  static handleError(error: any): Promise<any> {
     console.log('An error occurred');
     return Promise.reject(error.message || error);
   }

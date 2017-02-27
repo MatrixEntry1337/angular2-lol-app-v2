@@ -7,9 +7,10 @@ import { NgModule } from '@angular/core';
 
 // services
 import { ChampionService } from './services/champion.service'
+import {ChampionInfoService} from "./services/champion-info.service";
 
 @NgModule({
-  providers:[ChampionService],
+  providers:[ChampionService, ChampionInfoService],
 })
 
 export class ChampionServiceModule{}
