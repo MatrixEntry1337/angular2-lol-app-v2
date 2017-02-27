@@ -1,3 +1,11 @@
 <div class="margin-top-10">
   <home-jumbo></home-jumbo>
+  <div class="row">
+    <div class="col-md-4">
+      <div *ngIf="championInfoList">
+        <champion-list [championInfoList]="championInfoList" [listName]="freeToPlay">
+        </champion-list>
+      </div>
+    </div>
+  </div>
 </div>

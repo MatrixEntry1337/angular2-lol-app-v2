@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h4><strong>{{listName}}</strong></h4>
+    <div *ngFor="let champion of champions">
+      <h6><strong>{{champion.name}}</strong></h6>
+      <img class="img-responsive" src="{{getChampionImage(champion)}}">
+    </div>
+  </div>
+</div>
