@@ -19,7 +19,7 @@ export class ChampionInfoService {
   getFreeToPlayChampions(): Promise<ChampionInfo[]>{
     return this.http.get(this.championInfoUrl + '?freeToPlay=true&api_key=' + this.properties.getAPIKey())
       .toPromise().then(response => {
-        console.log('Champions Info:');
+        console.log('ChampionsModule Info:');
         console.log(response.json());
         return response.json().champions;
     });

@@ -32,4 +32,4 @@ import {ChampionListComponent} from "./components/champion-list/champion-list.co
   ]
 })
 
-export class Champions{}
+export class ChampionsModule{}
