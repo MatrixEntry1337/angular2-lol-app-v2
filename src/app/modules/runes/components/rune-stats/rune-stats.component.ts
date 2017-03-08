@@ -4,6 +4,7 @@
 
 import {Component, OnInit, Input, OnChanges} from "@angular/core";
 import {Stats} from "../../../../types/rune/stats";
+import {Rune} from "../../../../types/rune/rune";
 @Component({
   moduleId: module.id,
   selector: 'rune-stats',
@@ -13,24 +14,29 @@ import {Stats} from "../../../../types/rune/stats";
 export class RuneStatsComponent implements OnInit, OnChanges{
 
   @Input()
-  private stats: Stats;
+  private rune: Rune;
 
-  private keys: string[];
+  private statsKeys: string[];
+  private imageUrl = 'http://ddragon.leagueoflegends.com/cdn/7.5.1/img/rune/';
 
   constructor(){}
 
-  getKeys(): void{
-    this.keys = Object.keys(this.stats);
+  getStatsKeys(): void{
+    this.statsKeys = Object.keys(this.rune.stats);
     console.log("Keys of Stats:");
-    console.log(this.keys);
+    console.log(this.statsKeys);
+  }
+
+  getRuneImage(): string{
+    return this.imageUrl + this.rune.image.full;
   }
 
   ngOnInit(){
-    this.getKeys();
+    this.getStatsKeys();
   }
 
   ngOnChanges(){
-    this.getKeys();
+    this.getStatsKeys();
   }
 
 }
