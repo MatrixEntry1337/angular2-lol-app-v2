@@ -1,9 +1,19 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let key of keys">
+    <img src="{{getRuneImage()}}">
+    <ul class="list-group margin-top-5">
+      <li class="list-group-item">
+        <p *ngFor="let tag of rune.tags">{{tag}}</p>
+      </li>
+      <li class="list-group-item">
+        Rune Tier: {{rune.rune.tier}}
+      </li>
+      <li class="list-group-item">
+        Rune Type: {{rune.rune.type}}
+      </li>
+      <li class="list-group-item" *ngFor="let key of statsKeys">
         {{key}}
-        <span class="badge bg-primary">{{stats[key]}}</span>
+        <span class="badge bg-primary">{{rune.stats[key]}}</span>
       </li>
     </ul>
   </div>
