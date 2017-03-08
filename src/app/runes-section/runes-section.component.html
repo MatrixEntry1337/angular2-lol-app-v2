@@ -1,3 +1,30 @@
-<div>
+<div class="margin-top-10">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="runes">
+        <h3 class="panel-title">Runes</h3>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"
+               href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Runes <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu list-length">
+              <li *ngFor="let rune of runes | values">
+                <a role="button" (click)="selectRune(rune)">{{rune.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="margin-top-10" *ngIf="selectedRune">
+  <div class="row">
+    <div class="col-lg-4">
+      {{selectedRune.name}}
+    </div>
+  </div>
 </div>
