@@ -3,7 +3,7 @@
  */
 
 import {Component, Input, OnInit, OnChanges} from "@angular/core";
-import {Stat} from "../../../../types/item/stat";
+import {Stats} from "../../../../types/item/stat";
 import {Logger} from "angular2-logger/core";
 import {Item} from "../../../../types/item/item";
 @Component({
@@ -15,7 +15,7 @@ export class ItemStatsComponent implements OnInit, OnChanges{
 
   @Input()
   item: Item;
-  stats: Stat;
+  stats: Stats;
   keys: string[];
   imageUrl = 'http://ddragon.leagueoflegends.com/cdn/7.3.3/img/item/';
 

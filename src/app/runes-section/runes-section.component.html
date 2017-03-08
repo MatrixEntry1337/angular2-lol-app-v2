@@ -24,7 +24,7 @@
 <div class="margin-top-10" *ngIf="selectedRune">
   <div class="row">
     <div class="col-lg-4">
-      {{selectedRune.name}}
+      <rune-stats [stats]="selectedRune.stats" ></rune-stats>
     </div>
   </div>
 </div>

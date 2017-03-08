@@ -3,7 +3,7 @@
  */
 import { Spell } from './spell'
 import {Skin} from "./skin";
-import {Stat} from "./stat";
+import {Stats} from "./stats";
 import {Info} from "./info";
 
 export class Champion{
@@ -18,5 +18,5 @@ export class Champion{
   info: Info[];
   spells: Spell[];
   skins: Skin[];
-  stats: Stat;
+  stats: Stats;
 }

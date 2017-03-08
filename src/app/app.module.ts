@@ -24,6 +24,7 @@ import {HomeSectionComponent} from "./home-section/home-section.component";
 import {ItemsSectionComponent} from "./items-section/items-section.component";
 import {RunesSectionComponent} from "./runes-section/runes-section.component";
 import {RunesServiceModule} from "./modules/runes-services/runes-service.module";
+import {RunesModule} from "./modules/runes/runes.module";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {RunesServiceModule} from "./modules/runes-services/runes-service.module"
     RunesServiceModule,
     ChampionsModule,
     ItemsModule,
+    RunesModule,
     Pipes
   ],
   providers: [

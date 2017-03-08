@@ -30,7 +30,10 @@ export class RunesSectionComponent implements OnInit{
   }
 
   selectRune(rune: Rune): void{
-    this.selectedRune = rune;
+    this.runesService.getRune(rune)
+      .then(rune => {
+        this.selectedRune = rune;
+      })
   }
 
   ngOnInit(){

@@ -1,5 +1,5 @@
 /**Created by kyle on 2/20/2017.*/
-import {Stat} from "./stat";
+import {Stats} from "./stat";
 import {Gold} from "./gold";
 import {Image} from "./image";
 export class Item{
@@ -9,7 +9,7 @@ export class Item{
   plaintext: string;
   tags: string[];
   depth: number;
-  stats: Stat;
+  stats: Stats;
   into: string[];
   from: string[];
   gold: Gold;

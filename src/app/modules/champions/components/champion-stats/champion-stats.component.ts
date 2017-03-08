@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Stat} from "../../../../types/champion/stat";
+import {Stats} from "../../../../types/champion/stats";
 /**
  * Created by kyle on 2/18/2017.
  */
@@ -11,7 +11,7 @@ import {Stat} from "../../../../types/champion/stat";
 })
 export class ChampionStatsComponent implements OnInit {
   @Input()
-  stats: Stat;
+  stats: Stats;
   keys: string[];
 
   constructor(){}
@@ -23,7 +23,6 @@ export class ChampionStatsComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    console.log("test");
     this.getKeys();
   }
 

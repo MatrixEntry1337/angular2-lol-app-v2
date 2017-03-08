@@ -27,4 +27,12 @@ export class RunesService{
       });
   }
 
+  getRune(rune: Rune): Promise<Rune>{
+    return this.http.get(this.runesUrl + "/" + rune.id + "?runeData=all&api_key=" + this.properties.getAPIKey())
+      .toPromise()
+      .then(response => {
+        console.log("Retrieved all data for Rune: " + response.json());
+        return response.json() as Rune;
+      })
+  }
 }
