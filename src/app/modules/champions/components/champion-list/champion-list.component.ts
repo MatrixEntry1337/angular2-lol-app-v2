@@ -18,6 +18,7 @@ export class ChampionListComponent implements OnInit, OnChanges{
   @Input()
   listName: string;
 
+  // TODO - set up oupt event after selecting a champion
   @Output()
   notify: EventEmitter<Champion> = new EventEmitter<Champion>();
 
@@ -42,6 +43,7 @@ export class ChampionListComponent implements OnInit, OnChanges{
     return this.splashUrl + champion.key+ "_0.jpg";
   }
 
+  // TODO - select champion function
   selectChampion(): void {
 
   }

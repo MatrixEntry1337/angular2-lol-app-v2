@@ -9,7 +9,7 @@ import { HttpModule } from '@angular/http';
 import { Jumbotron } from './modules/jumbotrons/jumbotrons.module';
 import {ChampionServiceModule} from "./modules/champion-services/champion-services.module";
 import {ItemServiceModule} from "./modules/item-services/item-services.module";
-import {Champions} from "./modules/champions/champions.module";
+import {ChampionsModule} from "./modules/champions/champions.module";
 import {ItemsModule} from "./modules/items/items.module";
 import {Pipes} from './modules/pipes/pipes.module'
 
@@ -22,13 +22,17 @@ import { AppComponent } from './app.component';
 import {ChampionsSectionComponent} from "./champions-section/champions-section.component";
 import {HomeSectionComponent} from "./home-section/home-section.component";
 import {ItemsSectionComponent} from "./items-section/items-section.component";
+import {RunesSectionComponent} from "./runes-section/runes-section.component";
+import {RunesServiceModule} from "./modules/runes-services/runes-service.module";
+import {RunesModule} from "./modules/runes/runes.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChampionsSectionComponent,
     HomeSectionComponent,
-    ItemsSectionComponent
+    ItemsSectionComponent,
+    RunesSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +43,10 @@ import {ItemsSectionComponent} from "./items-section/items-section.component";
     Jumbotron,
     ChampionServiceModule,
     ItemServiceModule,
-    Champions,
+    RunesServiceModule,
+    ChampionsModule,
     ItemsModule,
+    RunesModule,
     Pipes
   ],
   providers: [

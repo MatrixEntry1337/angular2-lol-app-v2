@@ -23,7 +23,7 @@ export class ChampionService{
   getAllChampions(): Promise<ChampionGroup>{
     return this.http.get(this.championsUrl + "?champData=tags&api_key=" + this.properties.getAPIKey())
       .toPromise().then(response => {
-        console.log("Getting All Champions:");
+        console.log("Getting All ChampionsModule:");
         console.log(response.json().data);
         return response.json().data as ChampionGroup;
       })

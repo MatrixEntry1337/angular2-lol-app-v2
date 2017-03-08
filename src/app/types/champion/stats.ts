@@ -1,7 +1,7 @@
 /**
  * Created by kyle on 2/18/2017.
  */
-export class Stat{
+export class Stats{
   attackRange: number;
   mpperlevel: number;
   mp: number;
