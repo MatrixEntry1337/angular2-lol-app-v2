@@ -26,7 +26,6 @@ export class ItemListsComponent implements OnInit, OnChanges{
     this.notify.emit(item);
   }
 
-
   constructor(private itemService: ItemService){}
 
   getItems(): void{

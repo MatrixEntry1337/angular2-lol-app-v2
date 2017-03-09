@@ -14,20 +14,44 @@ import {ChampionService} from "../modules/champion-services/services/champion.se
   styleUrls: ['champions-sections.component.css']
 })
 export class ChampionsSectionComponent implements OnInit{
-  champions: ChampionGroup;
-  selectedChampion: Champion;
+  private champions: Champion[];
+  private selectedChampion: Champion;
+
+  private championTagList: string[] = ['Fighter', 'Assassin', 'Mage', 'Tank', 'Support', 'Marksman'];
+  private currentChampionTag = 0;
 
   constructor(private championService: ChampionService){}
 
+  //
   getChampions(): void {
     this.championService.getAllChampions()
       .then(champions => {
-        this.champions = champions;
-        console.log("Objects in ChampionsComponent: ");
-        console.log(this.champions);
+        // console.log("Objects in ChampionsComponent: ");
+        // console.log(champions);
+        this.prep(champions);
       });
   }
 
+  //
+  private prep(champions: ChampionGroup): void{
+    // push champions into array
+    let keys = Object.keys(champions);
+    this.champions = [];
+    for(let key of keys){
+      this.champions.push(champions[key]);
+    }
+
+    // sort champions - name
+    this.champions.sort(function(a, b){
+      return (a.name > b.name) ? 1: -1;
+    });
+
+    // select random champion
+    let randChamp = Math.trunc(Math.random() % 100 * 100);
+    this.getChampion(this.champions[randChamp]);
+  }
+
+  //
   getChampion(champion: Champion): void{
     this.championService.getChampion(champion)
       .then(champion => {
@@ -35,6 +59,11 @@ export class ChampionsSectionComponent implements OnInit{
         console.log(champion);
         return this.selectedChampion = champion;
       });
+  }
+
+  //
+  selectTag(tagNumber: number): void{
+    this.currentChampionTag = tagNumber;
   }
 
   ngOnInit(): void {
