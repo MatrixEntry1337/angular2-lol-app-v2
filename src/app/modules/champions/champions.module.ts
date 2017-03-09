@@ -10,6 +10,7 @@ import {ChampionSkinsComponent} from "./components/champion-skins/champion-skins
 import {ChampionLoreComponent} from "./components/champion-lore/champion-lore.component";
 import {ChampionStatsComponent} from "./components/champion-stats/champion-stats.component";
 import {ChampionListComponent} from "./components/champion-list/champion-list.component";
+import {ChampionTagListComponent} from "./components/champion-tag-list/champion-tag-list.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ChampionListComponent} from "./components/champion-list/champion-list.co
     ChampionSkinsComponent,
     ChampionLoreComponent,
     ChampionStatsComponent,
-    ChampionListComponent
+    ChampionListComponent,
+    ChampionTagListComponent
   ],
   imports:[
     Pipes,
@@ -28,7 +30,8 @@ import {ChampionListComponent} from "./components/champion-list/champion-list.co
     ChampionSkinsComponent,
     ChampionLoreComponent,
     ChampionStatsComponent,
-    ChampionListComponent
+    ChampionListComponent,
+    ChampionTagListComponent
   ]
 })
 

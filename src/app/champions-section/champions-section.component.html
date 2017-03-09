@@ -9,12 +9,30 @@
               Champs <span class="caret"></span>
             </a>
             <ul class="dropdown-menu list-length">
-              <li *ngFor="let champion of champions | values">
+              <li *ngFor="let champion of champions">
                 <a role="button" (click)="getChampion(champion)">{{champion.name}}</a>
               </li>
             </ul>
           </li>
         </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="margin-top-10" *ngIf="champions">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li *ngFor="let championTag of championTagList; let i = index;" [ngClass]="{active: currentChampionTag === i}">
+          <a role="button" (click)="selectTag(i)">
+            {{championTag}}
+          </a></li>
+      </ul>
+      <div class="margin-top-5">
+        <champion-tag-list [champions]="champions"
+           [championTag]="championTagList[currentChampionTag]"
+            (notify)="getChampion($event)">
+        </champion-tag-list>
       </div>
     </div>
   </div>

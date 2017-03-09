@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h4>{{championTag}}</h4>
+      <ul class="list-inline">
+        <li *ngFor="let champion of champions | tags:championTag">
+          <button class="btn btn-link margin-top-5" (click)="selectChampion(champion)">
+            {{champion.name}}
+          </button>
+        </li>
+      </ul>
+  </div>
+</div>
